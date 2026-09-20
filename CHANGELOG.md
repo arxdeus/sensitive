@@ -1,5 +1,10 @@
 ## 1.0.0
 
+- Depends on `analyzer_plugin_toolkit` by version rather than by path. The
+  repository is a pub workspace, so that constraint still resolves to the
+  working tree during development while being the constraint the package
+  actually publishes with.
+
 - Extracted from `arxdeus_lints`, where this rule shipped alongside the
   object-lifetime rules. Keeping a secret out of a log has nothing to do with
   disposing a controller, so it is now its own plugin: a project that wants

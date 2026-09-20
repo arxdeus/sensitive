@@ -137,12 +137,6 @@ Use `dart analyze`, not `flutter analyze`: the Flutter wrapper runs its own
 bundled analysis and drops diagnostics that come from a third-party analyzer
 plugin.
 
-## Related packages
-
-Split out of [`arxdeus_lints`][], which keeps the rules about object
-lifetimes. See also [`checked_exceptions`][] for `@Throws`. All three are
-independent: enable any combination.
-
 ## Development
 
 ```sh
@@ -150,6 +144,8 @@ dart analyze   # must be clean
 dart test      # the rule matrix plus plugin registration
 ```
 
+## License
+
+MIT. See [LICENSE](LICENSE).
+
 [analyzer plugin]: https://pub.dev/packages/analysis_server_plugin
-[`arxdeus_lints`]: https://pub.dev/packages/arxdeus_lints
-[`checked_exceptions`]: https://pub.dev/packages/checked_exceptions

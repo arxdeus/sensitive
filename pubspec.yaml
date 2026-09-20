@@ -4,8 +4,8 @@ description: >-
   @Sensitive must not be interpolated into a string, converted with toString,
   passed to a logging sink, or put into an exception message.
 version: 1.0.0
-repository: https://github.com/arxdeus/arxdeus_lints
-issue_tracker: https://github.com/arxdeus/arxdeus_lints/issues
+repository: https://github.com/arxdeus/sensitive_exposure_lint
+issue_tracker: https://github.com/arxdeus/sensitive_exposure_lint/issues
 
 environment:
   sdk: ^3.13.2

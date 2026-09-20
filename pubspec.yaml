@@ -1,8 +1,8 @@
 name: sensitive
 description: >-
-  Analyzer plugin that keeps secrets out of logs: a value annotated with
-  @Sensitive must not be interpolated into a string, converted with toString,
-  passed to a logging sink, or put into an exception message.
+  Analyzer plugin that keeps secrets out of logs. A value annotated with
+  @Sensitive must not be interpolated, stringified, logged, or put into an
+  exception message.
 version: 1.0.0
 homepage: https://github.com/arxdeus/sensitive
 repository: https://github.com/arxdeus/sensitive

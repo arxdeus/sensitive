@@ -1,0 +1,33 @@
+name: Feature request
+description: Propose another way a secret can leak, or an option to control the rule.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The rule's scope is one question: could this value reach somewhere a
+        person or a log file can read it? A proposal that names a concrete leak
+        is easier to act on than one that names a category.
+
+  - type: textarea
+    id: leak
+    attributes:
+      label: The leak
+      description: How does a secret escape today without being reported?
+      render: dart
+    validations:
+      required: true
+
+  - type: textarea
+    id: shape
+    attributes:
+      label: What should be reported
+      description: Which line, and what should the message say?
+
+  - type: textarea
+    id: falsePositives
+    attributes:
+      label: What must stay unreported
+      description: >-
+        The cases nearby that are legitimate. A rule that reports those instead
+        gets switched off, which is worse than not having it.

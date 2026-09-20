@@ -1,0 +1,71 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - run: dart pub get
+
+      - run: dart format --output=none --set-exit-if-changed .
+
+      - run: dart analyze --fatal-infos
+
+      - run: dart test
+
+  # The unit tests drive the rule through the analyzer's testing harness, which
+  # never loads the plugin the way the analysis server does. Only the example
+  # exercises that path, so only the example can catch a plugin that registers
+  # under the wrong name, or fails to start at all, while every test still
+  # passes. This package shipped exactly that fault until it was noticed by
+  # hand, so it is checked here rather than assumed.
+  #
+  # The example's `analysis_options.yaml` reaches the plugin by path, and has to:
+  # a version constraint there sends the analysis server to pub.dev, and a
+  # `pubspec_overrides.yaml` does not redirect it, because the server resolves a
+  # plugin independently of the surrounding package.
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - run: dart pub get
+
+      - run: dart pub get
+        working-directory: example
+
+      # Not `dart analyze` here: the example declares secrets and then leaks
+      # them, so it reports by design and can never exit zero. What matters is
+      # that it reports exactly what its comments claim, which is a stronger
+      # check than a clean run, and the only one that catches a plugin that
+      # silently failed to load.
+      - name: Verify the example reports what it documents
+        run: dart run tool/verify_example.dart
+
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - run: dart pub get
+
+      - run: dart pub publish --dry-run

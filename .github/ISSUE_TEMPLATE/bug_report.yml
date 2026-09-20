@@ -1,0 +1,55 @@
+name: Bug report
+description: The rule fired when it should not have, or stayed quiet when it should have fired.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A false negative is the more serious kind here: a secret reaching a log
+        that this plugin did not report. Please say which of the two it is.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you expected to be reported, and what was reported instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: >-
+        The smallest Dart file that shows it, including the `@Sensitive`
+        declaration and the line you expected a diagnostic on.
+      render: dart
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: sensitive version
+      placeholder: 1.0.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: >-
+        Output of `dart --version`, and the resolved `analyzer` version from
+        your lockfile. Element modelling changes between analyzer releases, so
+        both matter.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: options
+    attributes:
+      label: analysis_options.yaml
+      description: The `plugins:` section, at least.
+      render: yaml

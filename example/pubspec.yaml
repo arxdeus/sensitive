@@ -1,0 +1,11 @@
+name: sensitive_exposure_lint_example
+description: Demonstrates the sensitive_exposure_lint analyzer plugin.
+publish_to: none
+version: 1.0.0
+
+environment:
+  sdk: ^3.13.2
+
+dependencies:
+  sensitive_exposure_lint:
+    path: ../

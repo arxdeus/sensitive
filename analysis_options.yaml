@@ -1,0 +1,6 @@
+# Held to the same standard as the other packages in the repository.
+include: package:arxdeus_lints/analysis_options/recommended.yaml
+
+analyzer:
+  exclude:
+    - build/**

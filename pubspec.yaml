@@ -7,6 +7,14 @@ version: 1.0.0
 repository: https://github.com/arxdeus/sensitive
 issue_tracker: https://github.com/arxdeus/sensitive/issues
 
+# Shown on pub.dev and searchable there. Only the vocabulary pub.dev accepts:
+# lowercase, hyphenated, no `dart` or `flutter`.
+topics:
+  - analyzer-plugin
+  - lints
+  - static-analysis
+  - security
+
 environment:
   sdk: ^3.13.2
 

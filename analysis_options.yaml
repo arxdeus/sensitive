@@ -4,3 +4,10 @@ include: package:arxdeus_lints/analysis_options/recommended.yaml
 analyzer:
   exclude:
     - build/**
+    # The example exists to be reported on: it declares secrets and then leaks
+    # them, which is the whole demonstration. Analysing it from here would mean
+    # this package could never be clean. It has its own analysis_options.yaml,
+    # enables this plugin against itself, and is checked by its own CI job and
+    # by tool/verify_example.dart, which holds every diagnostic to the line its
+    # comment promises.
+    - example/**

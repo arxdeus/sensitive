@@ -10,8 +10,6 @@ issue_tracker: https://github.com/arxdeus/sensitive_exposure_lint/issues
 environment:
   sdk: ^3.13.2
 
-resolution: workspace
-
 dependencies:
   analysis_server_plugin: ^0.3.23
   analyzer: ^14.4.0

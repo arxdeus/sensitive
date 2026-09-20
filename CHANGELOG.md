@@ -2,7 +2,13 @@
 
 ## 1.0.0
 
-Initial release as a standalone package.
+Initial release as a standalone package, under the name `sensitive`.
+
+The package was developed as `sensitive_exposure_lint` and renamed before it
+was ever published, so there is nothing to migrate: no release exists under the
+old name. The rule inside it is still called `sensitive_exposure`, which is what
+a diagnostic and an `// ignore:` comment name, so those read
+`sensitive/sensitive_exposure`.
 
 An analyzer plugin that keeps secrets out of logs. Mark a value `@Sensitive()`
 and the `sensitive_exposure` rule reports it being interpolated into a string,
@@ -31,7 +37,7 @@ Previously this rule shipped inside `arxdeus_lints` alongside rules about
 object lifetimes. Keeping a secret out of a log has nothing to do with
 disposing a controller, and a project that wanted one had to take the other.
 Migrating from that version means importing `@Sensitive` from
-`package:sensitive_exposure_lint/sensitive_exposure_lint.dart`, adding this
+`package:sensitive/sensitive.dart`, adding this
 package to `dependencies` and to the `plugins` section, and changing any
 `// ignore: arxdeus_lints/sensitive_exposure` comment to the
-`sensitive_exposure_lint/` prefix. The rule reports identical diagnostics.
+`sensitive/` prefix. The rule reports identical diagnostics.

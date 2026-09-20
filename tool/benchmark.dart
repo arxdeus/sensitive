@@ -21,7 +21,7 @@ import 'package:analyzer/error/listener.dart';
 import 'package:analyzer/file_system/physical_file_system.dart';
 import 'package:analyzer/src/analysis_rule/rule_context.dart';
 import 'package:analyzer/src/lint/linter_visitor.dart';
-import 'package:sensitive_exposure_lint/src/rules/sensitive_exposure.dart';
+import 'package:sensitive/src/rules/sensitive_exposure.dart';
 
 Future<void> main(List<String> args) async {
   if (args.isEmpty) {

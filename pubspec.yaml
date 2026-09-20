@@ -1,11 +1,11 @@
-name: sensitive_exposure_lint
+name: sensitive
 description: >-
   Analyzer plugin that keeps secrets out of logs: a value annotated with
   @Sensitive must not be interpolated into a string, converted with toString,
   passed to a logging sink, or put into an exception message.
 version: 1.0.0
-repository: https://github.com/arxdeus/sensitive_exposure_lint
-issue_tracker: https://github.com/arxdeus/sensitive_exposure_lint/issues
+repository: https://github.com/arxdeus/sensitive
+issue_tracker: https://github.com/arxdeus/sensitive/issues
 
 environment:
   sdk: ^3.13.2

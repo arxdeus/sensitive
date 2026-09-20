@@ -1,7 +1,7 @@
 // Run `dart pub get && dart analyze` in this directory to see the rule fire.
 //
 // Expected output: exactly one warning per line marked "reported" below.
-import 'package:sensitive_exposure_lint/sensitive_exposure_lint.dart';
+import 'package:sensitive/sensitive.dart';
 
 class Credentials {
   Credentials(this.token);
@@ -38,7 +38,7 @@ class Credentials {
 
   void suppressed() {
     // Diagnostics are suppressed with the plugin name as a prefix.
-    // ignore: sensitive_exposure_lint/sensitive_exposure
+    // ignore: sensitive/sensitive_exposure
     print('token: $token');
   }
 }

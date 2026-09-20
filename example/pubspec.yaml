@@ -1,5 +1,5 @@
-name: sensitive_exposure_lint_example
-description: Demonstrates the sensitive_exposure_lint analyzer plugin.
+name: sensitive_example
+description: Demonstrates the sensitive analyzer plugin.
 publish_to: none
 version: 1.0.0
 
@@ -13,7 +13,7 @@ environment:
 #
 # arxdeus_lints below comes from pub.dev, exactly as a consumer would get it.
 dependencies:
-  sensitive_exposure_lint:
+  sensitive:
     path: ../
 
 dev_dependencies:

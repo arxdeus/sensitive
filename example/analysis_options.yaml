@@ -1,6 +1,6 @@
 # Consumers get the shared lint config and the plugin in one place. This is
-# exactly what a project adopting sensitive_exposure_lint writes.
+# exactly what a project adopting sensitive writes.
 include: package:arxdeus_lints/analysis_options/recommended.yaml
 
 plugins:
-  sensitive_exposure_lint: ^1.0.0
+  sensitive: ^1.0.0

@@ -1,5 +1,5 @@
 import 'package:analyzer_testing/analysis_rule/analysis_rule.dart';
-import 'package:sensitive_exposure_lint/src/rules/sensitive_exposure.dart';
+import 'package:sensitive/src/rules/sensitive_exposure.dart';
 import 'package:test/test.dart';
 import 'package:test_reflective_loader/test_reflective_loader.dart';
 
@@ -13,7 +13,7 @@ void main() {
 
 /// The annotated declarations shared by the fixtures.
 const _preamble = '''
-import 'package:sensitive_exposure_lint/sensitive_exposure_lint.dart';
+import 'package:sensitive/sensitive.dart';
 
 class AuthError implements Exception {
   AuthError(this.message);
@@ -48,8 +48,8 @@ class SensitiveExposureTest extends AnalysisRuleTest {
   @override
   void setUp() {
     newPackage(
-      'sensitive_exposure_lint',
-    ).addFile('lib/sensitive_exposure_lint.dart', annotationsSource);
+      'sensitive',
+    ).addFile('lib/sensitive.dart', annotationsSource);
     rule = SensitiveExposureRule();
     super.setUp();
   }

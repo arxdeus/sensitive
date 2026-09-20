@@ -1,7 +1,7 @@
-// The annotation consumed by the `sensitive_exposure_lint` analyzer plugin.
+// The annotation consumed by the `sensitive` analyzer plugin.
 //
 // The rule identifies this annotation by its class name *and* by the fact that
-// it is declared in the `sensitive_exposure_lint` package, so renaming the
+// it is declared in the `sensitive` package, so renaming the
 // class or its field is a breaking change for `lib/src/util/annotations.dart`.
 
 /// Marks a declaration as holding a secret that must never reach a log, a

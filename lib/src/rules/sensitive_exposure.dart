@@ -7,7 +7,7 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:analyzer/error/error.dart';
 import 'package:analyzer_plugin_toolkit/analyzer_plugin_toolkit.dart';
-import 'package:sensitive_exposure_lint/src/util/annotations.dart';
+import 'package:sensitive/src/util/annotations.dart';
 
 /// Method names that are treated as logging sinks when called on any target.
 ///
@@ -58,7 +58,7 @@ final class SensitiveExposureRule extends AnalysisRule {
   /// The diagnostic reported by this rule.
   ///
   /// Declared as a single `static const` so that the analysis server can match
-  /// the code, which is what makes `// ignore: sensitive_exposure_lint/sensitive_exposure`
+  /// the code, which is what makes `// ignore: sensitive/sensitive_exposure`
   /// work.
   static const LintCode code = LintCode(
     'sensitive_exposure',

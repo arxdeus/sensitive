@@ -7,7 +7,7 @@ import 'package:analyzer_plugin_toolkit/analyzer_plugin_toolkit.dart';
 /// Shared by the whole rule, so that a declaration is inspected once no matter
 /// how many references to it the file contains: the finder memoizes per
 /// element, and the memo table lives as long as the element does.
-final _annotations = AnnotationFinder('sensitive_exposure_lint');
+final _annotations = AnnotationFinder('sensitive');
 
 /// A `@Sensitive` annotation found on a declaration.
 ///

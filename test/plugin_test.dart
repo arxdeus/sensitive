@@ -1,9 +1,9 @@
 import 'package:analysis_server_plugin/registry.dart';
 import 'package:analyzer/analysis_rule/analysis_rule.dart';
 import 'package:analyzer/error/error.dart';
-import 'package:sensitive_exposure_lint/main.dart' as entry_point;
-import 'package:sensitive_exposure_lint/src/plugin.dart';
-import 'package:sensitive_exposure_lint/src/rules/sensitive_exposure.dart';
+import 'package:sensitive/main.dart' as entry_point;
+import 'package:sensitive/src/plugin.dart';
+import 'package:sensitive/src/rules/sensitive_exposure.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -13,7 +13,7 @@ void main() {
       // reads this top-level variable, so its name and type are part of the
       // contract with the server.
       expect(entry_point.plugin, isA<SensitiveExposurePlugin>());
-      expect(entry_point.plugin.name, 'sensitive_exposure_lint');
+      expect(entry_point.plugin.name, 'sensitive');
     });
 
     test('registers exactly the one rule, as a warning', () {
@@ -40,7 +40,7 @@ void main() {
 
     test('declares one diagnostic code, matching the rule name', () {
       // The code's name is what appears in
-      // `// ignore: sensitive_exposure_lint/<name>` and in the `diagnostics:`
+      // `// ignore: sensitive/<name>` and in the `diagnostics:`
       // section, so it must track the rule name.
       final rule = SensitiveExposureRule();
       expect(rule.diagnosticCodes, hasLength(1));

@@ -1,4 +1,4 @@
-# sensitive_exposure_lint
+# sensitive
 
 Keeps secrets out of logs, delivered as an [analyzer plugin][], so the check
 runs in your IDE and in `dart analyze` / `flutter analyze` with no extra
@@ -23,13 +23,13 @@ plugin (the analyzer runs the rule).
 ```yaml
 # pubspec.yaml
 dependencies:
-  sensitive_exposure_lint: ^1.0.0
+  sensitive: ^1.0.0
 ```
 
 ```yaml
 # analysis_options.yaml
 plugins:
-  sensitive_exposure_lint: ^1.0.0
+  sensitive: ^1.0.0
 ```
 
 The rule is registered as a *warning* rule, so it is active as soon as the
@@ -88,7 +88,7 @@ Disable it for the whole package:
 
 ```yaml
 plugins:
-  sensitive_exposure_lint:
+  sensitive:
     diagnostics:
       sensitive_exposure: false
 ```
@@ -97,11 +97,11 @@ Suppress one diagnostic with a comment, prefixed by the plugin name. The
 comment applies to the line below it:
 
 ```dart
-// ignore: sensitive_exposure_lint/sensitive_exposure
+// ignore: sensitive/sensitive_exposure
 print('token: $token');
 ```
 
-`// ignore_for_file: sensitive_exposure_lint/sensitive_exposure` works as well.
+`// ignore_for_file: sensitive/sensitive_exposure` works as well.
 
 ## Known limits
 

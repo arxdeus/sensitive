@@ -1,5 +1,9 @@
 # sensitive
 
+[![pub package](https://img.shields.io/pub/v/sensitive.svg)](https://pub.dev/packages/sensitive)
+[![ci](https://github.com/arxdeus/sensitive/actions/workflows/ci.yml/badge.svg)](https://github.com/arxdeus/sensitive/actions/workflows/ci.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Keeps secrets out of logs, delivered as an [analyzer plugin][], so the check
 runs in your IDE and in `dart analyze` / `flutter analyze` with no extra
 tooling.
@@ -140,9 +144,20 @@ plugin.
 ## Development
 
 ```sh
-dart analyze   # must be clean
-dart test      # the rule matrix plus plugin registration
+dart analyze --fatal-infos          # must be clean
+dart test                           # the rule matrix plus plugin registration
+dart run tool/verify_example.dart   # the plugin loads, and fires where documented
 ```
+
+That last one matters more than it looks. `dart test` drives the rule directly
+through the analyzer's testing harness, which never loads the plugin the way the
+analysis server does, so a plugin that fails to start leaves every test passing
+while reporting nothing at all for a real user. The example is the only place the
+whole path runs, and `tool/verify_example.dart` holds it to its own
+`// reported:` comments.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the scope of the rule, the commit
+conventions, and how a release is cut.
 
 ## License
 

@@ -139,13 +139,7 @@ plugin.
 
 ## Development
 
-This package is developed inside a pub workspace that checks it out as a
-submodule alongside its sibling packages. Its pubspec declares
-`resolution: workspace`, so a lone clone of *this* repository cannot resolve on
-its own: `dart pub get` needs that workspace root above it.
-
 ```sh
-cd packages/sensitive_exposure_lint
 dart analyze   # must be clean
 dart test      # the rule matrix plus plugin registration
 ```

@@ -3,7 +3,7 @@ description: >-
   Analyzer plugin that keeps secrets out of logs. A value annotated with
   @Sensitive must not be interpolated, stringified, logged, or put into an
   exception message.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/arxdeus/sensitive
 repository: https://github.com/arxdeus/sensitive
 issue_tracker: https://github.com/arxdeus/sensitive/issues

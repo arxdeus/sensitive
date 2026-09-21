@@ -4,6 +4,12 @@ All notable changes to this package are recorded here. Versions follow
 [semver](https://semver.org). A new diagnostic is a minor bump rather than a
 patch, because it can fail a build that passed before.
 
+## 1.0.1
+
+Lowers the minimum Dart SDK from 3.13.2 to 3.11.0. Nothing else changed: every
+dependency already resolved on 3.11, so the old constraint kept consumers off
+earlier stable SDKs for no reason.
+
 ## 1.0.0
 
 First release.
